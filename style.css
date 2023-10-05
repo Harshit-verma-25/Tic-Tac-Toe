@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+nav{
+    width: 100%;
+    height: 80px;
+}
+nav h1{
+    display: flex;
+    padding: 1vw;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vw;
+}
+.intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.intro h1{
+    color: orangered;
+}
+.intro p{
+    text-align: center;
+    font-size: 1.3vw;
+    line-height: 3vh;
+}
+.button{
+    display: flex;
+    gap: 2vw;
+}
+.button i{
+    color: black;
+}
+.intro button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3vw;
+    width: 9vw;
+    height: 5vh;
+    font-size: 1vw;
+    border-radius: 10px;
+    background-color: orangered;
+    cursor: pointer;
+    font-weight: 700;
+}
+.game-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+}
+.turn .turn1{
+    text-align: right;
+    align-items: center;
+    font-size: 1.5vw;
+    font-weight: 800;
+    /* display: none; */
+}
+.turn .turn2{
+    text-align: left;
+    align-items: center;
+    font-size: 1.5vw;
+    font-weight: 800;
+    /* display: none; */
+}
+.game-container .player-1{
+    font-size: 1.5vw;
+    line-height: 6vh;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px dashed black;
+    font-weight: 700;
+}
+.player-1 p,i{
+    color: orange;
+}
+.game-container .player-2{
+    font-size: 1.5vw;
+    line-height: 6vh;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px dashed black;
+    font-weight: 700;
+}
+.player-2 p{
+    color: orange;
+}
+.wld{
+    display: flex;
+    gap: 1.2vw;
+    font-size: 1.5vw;
+}
+.score div{
+    font-size: 1.5vw;
+    text-align: center;
+    line-height: 5vh;
+}
+.container{
+    border: 8px solid orangered;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: repeat(3, 8vw);
+    grid-template-columns: repeat(3, 8vw);
+}
+.box{
+    border: 1.5px solid black;
+    font-size: 7vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'roboto',sans-serif;
+}
+.box:hover{
+    background-color: rgba(143, 83, 199, 0.05);
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h1>TIC-<span style="color: rgb(255, 0, 0);">TAC</span>-TOE</h1>
+    </nav>
+    <br>
+    <div class="intro">
+        <h1>Let's Play the Tic-Tac-Toe Game!</h1>
+        <br>
+        <p>Players take turns putting their marks in empty square. The first player to get 3 of her marks<br>
+        in a row (up,down,across,diagonally) is the winner. When all 9 squares are full, the game<br> 
+        is over. If no player has 3 marks in a row, the game end in a tie.
+        </p>
+        <br>
+        <div class="button">
+            <button ><i class="ri-refresh-line"></i>Play Again</button>
+            <button type="reset"><i class="ri-restart-line"></i>Restart</button>
+        </div>
+    </div>
+    <br>
+    <div class="game-container">
+        <div class="turn">
+            <p class="turn1">Your Turn ></p><br>
+            <div class="player-1">
+                <i class="ri-user-3-line"></i>
+                <p>Player-1</p>
+                <h2>X</h2>
+            </div>
+            <br>
+            <div class="wld">
+                <div class="score">
+                    <h5>WIN</h5>
+                    <div class="win_p">0</div>
+                </div>
+                <div class="score">
+                    <h5>LOSE</h5>
+                    <div class="lose_p">0</div>
+                </div>
+                <div class="score">    
+                    <h5>DRAW</h5>
+                    <div class="draw">0</div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="box" style="border-left: 0; border-top: 0;"><span class="boxtext"></span></div>
+            <div class="box" style="border-top: 0;"><span class="boxtext"></span></div>
+            <div class="box" style="border-right: 0; border-top: 0;"><span class="boxtext"></span></div>
+            <div class="box" style="border-left: 0;"><span class="boxtext"></span></div>
+            <div class="box"><span class="boxtext"></span></div>
+            <div class="box" style="border-right: 0;"><span class="boxtext"></span></div>
+            <div class="box" style="border-left: 0; border-bottom: 0"><span class="boxtext"></span></div>
+            <div class="box" style="border-bottom: 0;"><span class="boxtext"></span></div>
+            <div class="box" style="border-right: 0; border-bottom: 0;"><span class="boxtext"></span></div>
+        </div>
+        <div class="turn">
+            <p class="turn2">< Your Turn</p><br>
+            <div class="player-2">
+                <i class="ri-user-3-line"></i>
+                <p>Player-2</p>
+                <h2>O</h2>
+            </div>
+            <br>
+            <div class="wld">
+                <div class="score">
+                    <h5>WIN</h5>
+                    <div class="win_cpu">0</div>
+                </div>
+                <div class="score">
+                    <h5>LOSE</h5>
+                    <div class="lose_cpu">0</div>
+                </div>
+                <div class="score">    
+                    <h5>DRAW</h5>
+                    <div class="draw">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
