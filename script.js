@@ -10,6 +10,7 @@ const draw = document.getElementById("draw-count")
 let xWinCount = 0
 let oWinCount = 0
 let drawCount = 0
+let turnCount = 0
 let turn = "X"
 let gameover = false
 
@@ -20,6 +21,7 @@ const changeturn = () => {
 
 // Function to check win
 const checkwin = () => {
+    turnCount += 1
     let wins = [
         [0,1,2],
         [0,3,6],
@@ -41,12 +43,12 @@ const checkwin = () => {
                 oWin.textContent = `O: ${oWinCount}`
             }
         gameover = true
-        }
-        else{
-            drawCount += 1
-            draw.textContent = `DRAW: ${drawCount}`
-        }
+        } 
     })
+    if(turnCount === 9 && gameover === false){
+        drawCount += 1
+        draw.textContent = `Draw: ${drawCount}`
+    }
 }
 
 // Game Logic
@@ -68,6 +70,7 @@ playAgainBtn.addEventListener('click',()=>{
         element.innerText = ""
     })
     gameover = false
+    turnCount = 0
     turn = "X"
 })
 
@@ -82,6 +85,7 @@ ResetBtn.addEventListener('click',()=>{
     xWinCount = 0
     oWinCount = 0
     drawCount = 0
+    turnCount = 0
 
     xWin.textContent = `X: ${xWinCount}`
     oWin.textContent = `O: ${oWinCount}`
