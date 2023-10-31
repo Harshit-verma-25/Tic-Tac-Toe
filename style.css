@@ -69,10 +69,10 @@ button:hover{
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.5vw;
+    font-size: 3vw;
     height: 40vh;
     width: 20vw;
-    line-height: 6vh;
+    line-height: 7vh;
     font-family: Roboto, sans-serif;
 }
 .win-count h5{
@@ -102,7 +102,7 @@ button:hover{
     background-color: rgba(143, 83, 199,0.25);
 }
 
-@media (max-width:600px) {
+@media (max-width:900px) {
     body{
         padding: 0px 3.8px;
     }
@@ -119,21 +119,22 @@ button:hover{
         flex-wrap: wrap;
     }
     .game-button button{
-        font-size: 5vw;
-        border-radius: 6px;
+        padding: 3vw;
+        font-size: 4vw;
+        border-radius: 8px;
     }
     .intro p{
         flex-wrap: wrap;
-        font-size: 2.5vw;
-        line-height: 2vh;
+        font-size: 3.5vw;
+        line-height: 3.5vh;
     }
     .game-container{
         display: flex;
         flex-wrap: wrap;
     }
     .win-count{
-        line-height: 2vh;
-        font-size: 3vw;
+        line-height: 4vh;
+        font-size: 4vw;
     }
     .win-count h5{
         font-size: 3vw;
@@ -143,10 +144,11 @@ button:hover{
         flex-wrap: wrap;
         width: 60vw;
         height: 27vh;
+        display: grid;
         margin-right: 0;
         border: 4px solid red;
-        grid-template-rows: repeat(3, auto);
-        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(3, 33.33%);
+        grid-template-columns: repeat(3, 33.33%);
     }
     .box{
         border: 0.5px solid black;
