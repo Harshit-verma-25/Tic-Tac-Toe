@@ -114,6 +114,8 @@ button:hover{
     .intro{
         flex-wrap: wrap;
     }
+    .intro h2{
+        text-align: center;
     .game-button{
         display: flex;
         flex-wrap: wrap;
