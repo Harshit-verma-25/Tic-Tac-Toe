@@ -1,12 +1,15 @@
-console.log("Welcome to Tic-Tac-Toe Game!!");
-
 // Initializing value of Win, Lose and Draw
-let win_p = 0
-let lose_p = 0
-let win_cpu = 0
-let lose_cpu = 0
-let draw = 0
+const xWin = document.getElementById("X-win-count")
+const oWin = document.getElementById("O-win-count")
+const boxes = document.getElementsByClassName("box")
+const boxtext = document.getElementsByClassName("boxtext")
+const playAgainBtn = document.getElementById("play-again-btn")
+const ResetBtn = document.getElementById("reset-btn")
+const draw = document.getElementById("draw-count")
 
+let xWinCount = 0
+let oWinCount = 0
+let drawCount = 0
 let turn = "X"
 let gameover = false
 
@@ -17,7 +20,6 @@ const changeturn = () => {
 
 // Function to check win
 const checkwin = () => {
-    let boxtext = document.getElementsByClassName("boxtext")
     let wins = [
         [0,1,2],
         [0,3,6],
@@ -28,39 +30,60 @@ const checkwin = () => {
         [3,4,5],
         [1,4,7],
     ]
-    wins.forEach(e => {
-        if((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[1]].innerText === boxtext[e[2]].innerText) && (boxtext[e[0]].innerText !== "")){
-            if(boxtext[e[0]].innerText == "X"){
-                win_p += 1
-                lose_cpu += 1
-                document.querySelector(".turn1").innerText = boxtext[e[0]].innerText + " Won";
-                document.querySelector(".turn2").innerText = boxtext[e[0]].innerText + " Won";
-                document.querySelector(".win_p").innerText = win_p;
-                document.querySelector(".lose_cpu").innerText = lose_cpu;
-                gameover = true;
+    wins.forEach(element => {
+        if((boxtext[element[0]].innerText === boxtext[element[1]].innerText) && (boxtext[element[1]].innerText === boxtext[element[2]].innerText) && (boxtext[element[0]].innerText !== "")){
+            if(boxtext[element[0]].innerText === "X"){
+                xWinCount += 1;
+                xWin.textContent = `X: ${xWinCount}`
             }
             else{
-                lose_p += 1
-                win_cpu += 1 
-                document.querySelector(".turn2").innerText = boxtext[e[0]].innerText + " Won";
-                document.querySelector(".turn1").innerText = boxtext[e[0]].innerText + " Won";
-                document.querySelector(".win_cpu").innerText = win_cpu;
-                document.querySelector(".lose_p").innerText = lose_p;
-                gameover = true;
+                oWinCount += 1;
+                oWin.textContent = `O: ${oWinCount}`
             }
-        }    
+        gameover = true
+        }
+        else{
+            drawCount += 1
+            draw.textContent = `DRAW: ${drawCount}`
+        }
     })
 }
 
 // Game Logic
-let boxes = document.getElementsByClassName("box")
 Array.from(boxes).forEach(element => {
     let boxtext = element.querySelector(".boxtext")
-    element.addEventListener('click',()=>{
-        if(boxtext.innerText === ''){
+    element.addEventListener("click", () => {
+        if(boxtext.innerText === "" && gameover === false){
             boxtext.innerText = turn
             turn = changeturn()
             checkwin()
         }
     })
+})
+
+// Play Again Button
+playAgainBtn.addEventListener('click',()=>{
+    let boxtext = document.querySelectorAll(".boxtext")
+    Array.from(boxtext).forEach(element => {
+        element.innerText = ""
+    })
+    gameover = false
+    turn = "X"
+})
+
+// Restart Button
+ResetBtn.addEventListener('click',()=>{
+    let boxtext = document.querySelectorAll(".boxtext")
+    Array.from(boxtext).forEach(element => {
+        element.innerText = ""
+    })
+    gameover = false
+    turn = "X"    
+    xWinCount = 0
+    oWinCount = 0
+    drawCount = 0
+
+    xWin.textContent = `X: ${xWinCount}`
+    oWin.textContent = `O: ${oWinCount}`
+    draw.textContent = `DRAW: ${drawCount}`
 })
